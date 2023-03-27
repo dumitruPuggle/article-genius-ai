@@ -6,7 +6,6 @@ type BrowserHeadlessAuto = "auto";
 interface IBrowserParams {
   launchWindow: boolean | BrowserHeadlessAuto;
 }
-
 export class Browser {
   private headless: boolean;
 
