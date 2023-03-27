@@ -1,6 +1,5 @@
-import puppeteer = require("puppeteer-core");
-import chromium = require("@sparticuz/chromium");
-import { MAC_OS_ARM } from "./os-path-executables";
+import { CloudPuppeteer } from "./versions/cloud-puppeteer-version";
+import { MacOSPuppeteer } from "./versions/mac-puppeteer";
 
 type BrowserHeadlessAuto = "auto";
 
@@ -23,32 +22,17 @@ export class Browser {
     }
   }
 
-  async chromiumCloudExecutable() {
-    return puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(),
-      headless: chromium.headless,
-    });
-  }
-
   private get HeadlessAuto() {
     return !this.headless && !this.isLocal;
   }
 
   async autoDetect() {
-    const args = this.isLocal ? undefined : chromium.args;
-    const defaultViewport = this.isLocal ? undefined : chromium.defaultViewport;
-    const executablePath = this.isLocal
-      ? MAC_OS_ARM
-      : await chromium.executablePath();
-    const headless = this.headless;
-
-    return puppeteer.launch({
-      args,
-      defaultViewport,
-      executablePath,
-      headless,
-    });
+    if (this.isLocal || process.env.IS_TESTING_ENV) {
+      // Return an local puppeteer version
+      return await MacOSPuppeteer.getBrowserInstance(this.headless);
+    } else {
+      // Return an cloud puppeteer version
+      return await CloudPuppeteer.getBrowserInstance();
+    }
   }
 }
