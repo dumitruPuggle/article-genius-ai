@@ -9,5 +9,5 @@ exports.scrape = functions
   .region("us-central1")
   .https.onRequest(async (request, response) => {
     const stories = await scrapeWebsite();
-    response.type("json").send(stories);
+    response.type("html").send(stories.join("<br>"));
   });

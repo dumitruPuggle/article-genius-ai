@@ -1,7 +1,9 @@
-import { PuppeteerBrowserInstance } from "../chromium/os-path-executables";
+import { Browser } from "../chromium/browser";
 
 test("Check the page title of example.com", async () => {
-  const browser = await PuppeteerBrowserInstance();
+  const browser = await new Browser({
+    launchWindow: false,
+  }).autoDetect();
 
   const page = await browser.newPage();
   await page.goto("https://example.com");
