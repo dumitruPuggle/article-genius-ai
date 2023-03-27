@@ -11,7 +11,9 @@ export class Browser {
   private headless: boolean;
 
   private get isLocal() {
-    return process.env.FUNCTIONS_EMULATOR === "true";
+    return (
+      process.env.FUNCTIONS_EMULATOR === "true" || process.env.IS_TESTING_ENV
+    );
   }
 
   constructor(params: IBrowserParams = { launchWindow: "auto" }) {
@@ -27,7 +29,7 @@ export class Browser {
   }
 
   async autoDetect() {
-    if (this.isLocal || process.env.IS_TESTING_ENV) {
+    if (this.isLocal) {
       // Return an local puppeteer version
       return await MacOSPuppeteer.getBrowserInstance(this.headless);
     } else {
