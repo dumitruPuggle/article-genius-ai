@@ -1,8 +1,8 @@
-import { Browser } from "../../../chromium/browser";
-import { Scrapper } from "../scapper";
+import { Browser } from "../../../../chromium/browser";
+import { Scrapper } from "../../../../core/scrapers/scapper";
 import { gamespotURL } from "./utils";
 
-const scrapeGamespot = async (): Promise<string[]> => {
+const scrapeGamespotWorker = async (): Promise<string[]> => {
   const browser = await new Browser({ launchWindow: false }).autoDetect();
   const scapper = new Scrapper(browser);
   const page = await scapper.pageWithLowNetwork(gamespotURL);
@@ -26,4 +26,4 @@ const scrapeGamespot = async (): Promise<string[]> => {
   return [...h2Titles, ...h3Titles];
 };
 
-export { scrapeGamespot };
+export { scrapeGamespotWorker };

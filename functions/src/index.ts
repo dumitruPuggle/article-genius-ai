@@ -1,41 +1,34 @@
 import * as functions from "firebase-functions";
-import { Configuration, OpenAIApi } from "openai";
-import { scrapeGamespot } from "./core/scrapers/gamespot/scrape-gamespot";
+import {
+  CloudQueuesCommandInvoker,
+  CloudCommandQueue,
+} from "./gateway/invokers/cloud-queues-command-invoker";
+const { initializeApp } = require("firebase-admin/app");
 
-// // Start writing functions
-// // https://firebase.google.com/docs/functions/typescript
-//
+initializeApp({
+  apiKey: "AIzaSyBx6a0ht1KP3WJYELn_u_Q_M4ECwljwoSY",
+  authDomain: "articlegenius-ai.firebaseapp.com",
+  projectId: "articlegenius-ai",
+  storageBucket: "articlegenius-ai.appspot.com",
+  messagingSenderId: "676688590911",
+  appId: "1:676688590911:web:086a8d15fea3feb55d208a",
+});
+
+exports.gamespot_scheduled_scraping = functions.pubsub
+  .schedule("every 5 minutes")
+  .timeZone("GMT+3")
+  .onRun(async () => {
+    await CloudQueuesCommandInvoker.executeCommand(
+      CloudCommandQueue.PUBLISH_REGENERATED_TITLES
+    );
+  });
+
 exports.scrape = functions
   .runWith({ timeoutSeconds: 120, memory: "2GB" })
   .region("us-central1")
   .https.onRequest(async (request, response) => {
-    const configuration = new Configuration({
-      apiKey: process.env.OPENAI_API_KEY,
-    });
-    const openai = new OpenAIApi(configuration);
-    const stories = await scrapeGamespot();
-
-    try {
-      const regenerateResponses = stories.map(async (storyTitle) => {
-        return (
-          await openai.createCompletion({
-            model: "text-davinci-003",
-            prompt: `Please recreate the title of this article: '${storyTitle}' for a news site.`,
-          })
-        ).data.choices[0].text;
-      });
-
-      const newTitles = await Promise.all(regenerateResponses);
-      response.type("html").send(newTitles.join("<br>"));
-    } catch (e) {
-      console.log(e);
-      response
-        .type("html")
-        .send(
-          [
-            "<strong>UNFORTUNATELY OPENAI REFUSED TO RESPOND, HERE'S THE SCRAPED DATA:</strong>",
-            ...stories,
-          ].join("<br>")
-        );
-    }
+    await CloudQueuesCommandInvoker.executeCommand(
+      CloudCommandQueue.PUBLISH_REGENERATED_TITLES
+    );
+    response.send(200);
   });

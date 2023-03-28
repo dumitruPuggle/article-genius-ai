@@ -1,4 +1,4 @@
-import { Browser } from "../../../chromium/browser";
+import { Browser } from "../../../../../chromium/browser";
 
 const scrapeWebsite = async (): Promise<string[]> => {
   const browser = await new Browser({ launchWindow: false }).autoDetect();
