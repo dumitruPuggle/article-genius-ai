@@ -9,3 +9,6 @@ typings/
 node_modules/
 
 .cache
+
+# Ignore .env files
+.env

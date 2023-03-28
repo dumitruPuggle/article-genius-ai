@@ -1,0 +1,138 @@
+[debug] [2023-03-28T12:17:35.866Z] ----------------------------------------------------------------------
+[debug] [2023-03-28T12:17:35.868Z] Command:       /usr/local/bin/firebase /Users/dumitrucucu/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase emulators:start --only functions
+[debug] [2023-03-28T12:17:35.868Z] CLI Version:   11.24.1
+[debug] [2023-03-28T12:17:35.868Z] Platform:      darwin
+[debug] [2023-03-28T12:17:35.868Z] Node Version:  v16.16.0
+[debug] [2023-03-28T12:17:35.869Z] Time:          Tue Mar 28 2023 15:17:35 GMT+0300 (Eastern European Summer Time)
+[debug] [2023-03-28T12:17:35.869Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-28T12:17:35.952Z] Field ".emulators.pubsub.port" in "firebase.json" is possibly invalid: should be number
+[debug] [2023-03-28T12:17:35.957Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-28T12:17:35.958Z] > authorizing via signed-in user (dumitruiurie@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2023-03-28T12:17:36.312Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-28T12:17:36.313Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-03-28T12:17:36.324Z] [hub] writing locator at /var/folders/d7/z98pwwxx3gl4dgdb02dgm5j00000gn/T/hub-articlegenius-ai.json
+[debug] [2023-03-28T12:17:36.591Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-28T12:17:36.593Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-28T12:17:36.593Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2023-03-28T12:17:36.604Z] defaultcredentials: writing to file /Users/dumitrucucu/.config/firebase/dumitruiurie_gmail_com_application_default_credentials.json
+[debug] [2023-03-28T12:17:36.607Z] Setting GAC to /Users/dumitrucucu/.config/firebase/dumitruiurie_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/dumitrucucu/.config/firebase/dumitruiurie_gmail_com_application_default_credentials.json"}}
+[debug] [2023-03-28T12:17:36.608Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/articlegenius-ai/adminSdkConfig [none]
+[debug] [2023-03-28T12:17:37.095Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/articlegenius-ai/adminSdkConfig 200
+[debug] [2023-03-28T12:17:37.096Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/articlegenius-ai/adminSdkConfig {"projectId":"articlegenius-ai","storageBucket":"articlegenius-ai.appspot.com"}
+[debug] [2023-03-28T12:17:37.145Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-28T12:17:37.146Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-03-28T12:17:37.146Z] Starting Emulator UI with command {"binary":"node","args":["/Users/dumitrucucu/.cache/firebase/emulators/ui-v1.11.4/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/dumitrucucu/.cache/firebase/emulators/ui-v1.11.4/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-03-28T12:17:37.293Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-03-28T12:17:37.294Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Users/dumitrucucu/Desktop/article-genius-ai/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/dumitrucucu/Desktop/article-genius-ai/functions\" for Cloud Functions..."}}
+[debug] [2023-03-28T12:17:37.433Z] Validating nodejs source
+[debug] [2023-03-28T12:17:38.632Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "test": "jest",
+    "stop": "lsof -i TCP:8080 | grep LISTEN | awk '{print $2}' | xargs kill -9 && lsof -i TCP:8085 | grep LISTEN | awk '{print $2}' | xargs kill -9 && lsof -i TCP:8085 | grep LISTEN | awk '{print $2}' | xargs kill -9 && lsof -i TCP:3000 | grep LISTEN | awk '{print $2}' | xargs kill -9"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@sparticuz/chromium": "^109.0.6",
+    "chrome-aws-lambda": "^10.1.0",
+    "express": "4.18.2",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "openai": "^3.2.1",
+    "puppeteer": "^19.8.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/puppeteer": "^7.0.4",
+    "firebase-functions-test": "^3.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5"
+  },
+  "private": true
+}
+[debug] [2023-03-28T12:17:38.633Z] Building nodejs source
+[debug] [2023-03-28T12:17:38.633Z] Failed to find version of module node: reached end of search path /Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules
+[info] ✔  functions: Using node@16 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-03-28T12:17:38.637Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-28T12:17:38.646Z] Found firebase-functions binary at '/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-28T12:17:39.063Z] Serving at port 8577
+
+[debug] [2023-03-28T12:17:39.251Z] Got response from /__/functions.yaml {"endpoints":{"scrape":{"platform":"gcfv1","availableMemoryMb":2048,"timeoutSeconds":120,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"region":["us-central1"],"httpsTrigger":{},"entryPoint":"scrape"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-28T12:17:39.259Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: scrape. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: scrape."}}
+[info] ✔  functions[us-central1-scrape]: http function initialized (http://127.0.0.1:5001/articlegenius-ai/us-central1/scrape). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/articlegenius-ai/us-central1/scrape)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-03-28T12:17:47.852Z] [work-queue] {"queuedWork":["/articlegenius-ai/us-central1/scrape-2023-03-28T12:17:47.852Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-03-28T12:17:47.857Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/articlegenius-ai/us-central1/scrape-2023-03-28T12:17:47.852Z"],"workRunningCount":1}
+[debug] [2023-03-28T12:17:47.858Z] Accepted request GET /articlegenius-ai/us-central1/scrape --> us-central1-scrape
+[debug] [2023-03-28T12:17:47.873Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-03-28T12:17:47.874Z] [functions] Got req.url=/articlegenius-ai/us-central1/scrape, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/articlegenius-ai/us-central1/scrape, mapping to path=/"}}
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-03-28T12:17:47.893Z] [worker-pool] addWorker(us-central1-scrape) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-scrape)"}}
+[debug] [2023-03-28T12:17:47.894Z] [worker-pool] Adding worker with key us-central1-scrape, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-scrape, total=1"}}
+[debug] [2023-03-28T12:17:48.549Z] [runtime-status] [9323] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.5.0","resolution":"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.5.0\",\"resolution\":\"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-03-28T12:17:48.549Z] [runtime-status] [9323] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-03-28T12:17:48.549Z] [runtime-status] [9323] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-03-28T12:17:48.550Z] [runtime-status] [9323] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-03-28T12:17:48.644Z] [runtime-status] [9323] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-03-28T12:17:48.644Z] [runtime-status] [9323] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2023-03-28T12:17:48.645Z] [runtime-status] [9323] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-03-28T12:17:48.645Z] [runtime-status] [9323] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.5.0","resolution":"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.5.0\",\"resolution\":\"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-03-28T12:17:48.646Z] [runtime-status] [9323] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-03-28T12:17:48.646Z] [runtime-status] [9323] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.5.0","resolution":"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.5.0\",\"resolution\":\"/Users/dumitrucucu/Desktop/article-genius-ai/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2023-03-28T12:17:48.718Z] [runtime-status] [9323] Functions runtime initialized. {"cwd":"/Users/dumitrucucu/Desktop/article-genius-ai/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Functions runtime initialized. {\"cwd\":\"/Users/dumitrucucu/Desktop/article-genius-ai/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2023-03-28T12:17:48.719Z] [runtime-status] [9323] Listening to port: /var/folders/d7/z98pwwxx3gl4dgdb02dgm5j00000gn/T/fire_emu_dd761a0c5a9f2c51.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[runtime-status] [9323] Listening to port: /var/folders/d7/z98pwwxx3gl4dgdb02dgm5j00000gn/T/fire_emu_dd761a0c5a9f2c51.sock"}}
+[debug] [2023-03-28T12:17:48.821Z] [worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: IDLE"}}
+[debug] [2023-03-28T12:17:48.823Z] [worker-pool] submitRequest(triggerId=us-central1-scrape) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-scrape)"}}
+[info] i  functions: Beginning execution of "us-central1-scrape" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"Beginning execution of \"us-central1-scrape\""}}
+[debug] [2023-03-28T12:17:48.825Z] [worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: BUSY"}}
+[info] i  functions: Finished "us-central1-scrape" in 3519.0559160000003ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"Finished \"us-central1-scrape\" in 3519.0559160000003ms"}}
+[debug] [2023-03-28T12:17:52.349Z] [worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: IDLE"}}
+[debug] [2023-03-28T12:17:52.349Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-03-28T12:18:07.749Z] [work-queue] {"queuedWork":["/articlegenius-ai/us-central1/scrape-2023-03-28T12:18:07.748Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-03-28T12:18:07.751Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/articlegenius-ai/us-central1/scrape-2023-03-28T12:18:07.748Z"],"workRunningCount":1}
+[debug] [2023-03-28T12:18:07.752Z] Accepted request GET /articlegenius-ai/us-central1/scrape --> us-central1-scrape
+[debug] [2023-03-28T12:18:07.764Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-03-28T12:18:07.765Z] [functions] Got req.url=/articlegenius-ai/us-central1/scrape, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/articlegenius-ai/us-central1/scrape, mapping to path=/"}}
+[debug] [2023-03-28T12:18:07.765Z] [worker-pool] submitRequest(triggerId=us-central1-scrape) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-scrape)"}}
+[info] i  functions: Beginning execution of "us-central1-scrape" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"Beginning execution of \"us-central1-scrape\""}}
+[debug] [2023-03-28T12:18:07.767Z] [worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: BUSY"}}
+[info] i  functions: Finished "us-central1-scrape" in 3332.275542ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"Finished \"us-central1-scrape\" in 3332.275542ms"}}
+[debug] [2023-03-28T12:18:11.102Z] [worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-scrape"},"extension":{},"message":"[worker-us-central1-scrape-df600f42-7f89-4ed5-9229-a952eb8d0807]: IDLE"}}
+[debug] [2023-03-28T12:18:11.103Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}

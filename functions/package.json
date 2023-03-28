@@ -8,7 +8,8 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test": "jest"
+    "test": "jest",
+    "stop": "lsof -i TCP:8080 | grep LISTEN | awk '{print $2}' | xargs kill -9 && lsof -i TCP:8085 | grep LISTEN | awk '{print $2}' | xargs kill -9 && lsof -i TCP:8085 | grep LISTEN | awk '{print $2}' | xargs kill -9 && lsof -i TCP:3000 | grep LISTEN | awk '{print $2}' | xargs kill -9"
   },
   "engines": {
     "node": "16"

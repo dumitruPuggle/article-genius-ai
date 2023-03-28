@@ -3,7 +3,7 @@ import { Scrapper } from "../scapper";
 import { gamespotURL } from "./utils";
 
 const scrapeGamespot = async (): Promise<string[]> => {
-  const browser = await new Browser().autoDetect();
+  const browser = await new Browser({ launchWindow: false }).autoDetect();
   const scapper = new Scrapper(browser);
   const page = await scapper.pageWithLowNetwork(gamespotURL);
 
