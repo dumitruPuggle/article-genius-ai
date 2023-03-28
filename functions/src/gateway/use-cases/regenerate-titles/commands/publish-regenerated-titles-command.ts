@@ -33,7 +33,9 @@ export class PublishRegeneratedTitlesCommand {
           data: newTitles,
           updatedAt: Timestamp.fromDate(new Date()),
         });
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
     return [""];
   }
 }

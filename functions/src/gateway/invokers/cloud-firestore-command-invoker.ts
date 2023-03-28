@@ -4,6 +4,11 @@ export enum CloudFirestoreCommandQueue {
   PUBLISH_NEWLY_GENERATED_ARTICLE = 1,
 }
 
+// export interface ICloudFirestoreCommandInvokerParams {
+//   change: Change<QueryDocumentSnapshot>;
+//   context: EventContext<ParamsOf<Path>>;
+// }
+
 export class CloudFirestoreCommandInvoker {
   static async executeCommand(commandId: CloudFirestoreCommandQueue) {
     if (
