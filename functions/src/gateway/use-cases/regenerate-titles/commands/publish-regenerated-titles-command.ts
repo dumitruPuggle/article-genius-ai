@@ -1,19 +1,16 @@
 import { getFirestore, Timestamp } from "firebase-admin/firestore";
-import { Configuration, OpenAIApi } from "openai";
 import { scrapeGamespotWorker } from "../workers/scrape-gamespot-worker";
 import {
   scheduledArticlesDoc,
   ScheduledTitlesRepo,
 } from "../../../../core/firebase/firebase-repos";
+import { OpenAIService } from "../../../../core/api-services/open-ai/open-ai-api-service";
 
 export class PublishRegeneratedTitlesCommand {
   async execute(): Promise<string[]> {
     const db = getFirestore();
 
-    const configuration = new Configuration({
-      apiKey: process.env.OPENAI_API_KEY,
-    });
-    const openai = new OpenAIApi(configuration);
+    const openai = new OpenAIService().setup;
     const titles = await scrapeGamespotWorker();
 
     const regenerateTitles = titles.map(async (storyTitle) => {
