@@ -3,32 +3,32 @@ import {
   CloudQueuesCommandInvoker,
   CloudCommandQueue,
 } from "./gateway/invokers/cloud-queues-command-invoker";
-const { initializeApp } = require("firebase-admin/app");
+import { initializeApp } from "firebase-admin/app";
+import {
+  scheduledArticlesDoc,
+  ScheduledTitlesRepoName,
+} from "./core/firebase/firebase-repos";
+import {
+  CloudFirestoreCommandInvoker,
+  CloudFirestoreCommandQueue,
+} from "./gateway/invokers/cloud-firestore-command-invoker";
 
-initializeApp({
-  apiKey: "AIzaSyBx6a0ht1KP3WJYELn_u_Q_M4ECwljwoSY",
-  authDomain: "articlegenius-ai.firebaseapp.com",
-  projectId: "articlegenius-ai",
-  storageBucket: "articlegenius-ai.appspot.com",
-  messagingSenderId: "676688590911",
-  appId: "1:676688590911:web:086a8d15fea3feb55d208a",
-});
+initializeApp();
 
-exports.gamespot_scheduled_scraping = functions.pubsub
-  .schedule("every 5 minutes")
-  .timeZone("GMT+3")
+exports.gamespot_scheduled_scraping = functions
+  .runWith({ memory: "2GB" })
+  .pubsub.schedule("5 11 * * *")
+  .timeZone("America/New_York")
   .onRun(async () => {
     await CloudQueuesCommandInvoker.executeCommand(
       CloudCommandQueue.PUBLISH_REGENERATED_TITLES
     );
   });
 
-exports.scrape = functions
-  .runWith({ timeoutSeconds: 120, memory: "2GB" })
-  .region("us-central1")
-  .https.onRequest(async (request, response) => {
-    await CloudQueuesCommandInvoker.executeCommand(
-      CloudCommandQueue.PUBLISH_REGENERATED_TITLES
+exports.articleWriter = functions.firestore
+  .document(`${ScheduledTitlesRepoName}/${scheduledArticlesDoc}`)
+  .onUpdate(async (change, context) => {
+    await CloudFirestoreCommandInvoker.executeCommand(
+      CloudFirestoreCommandQueue.PUBLISH_NEWLY_GENERATED_ARTICLE
     );
-    response.send(200);
   });

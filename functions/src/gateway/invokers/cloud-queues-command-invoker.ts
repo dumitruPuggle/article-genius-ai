@@ -2,6 +2,7 @@ import { PublishRegeneratedTitlesCommand } from "../use-cases/regenerate-titles/
 
 export enum CloudCommandQueue {
   PUBLISH_REGENERATED_TITLES = 0,
+  PUBLISH_NEWLY_GENERATED_ARTICLE = 1,
 }
 
 export class CloudQueuesCommandInvoker {

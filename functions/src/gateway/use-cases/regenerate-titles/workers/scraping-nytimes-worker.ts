@@ -1,6 +1,6 @@
-import { Browser } from "../../../../../chromium/browser";
+import { Browser } from "../../../../chromium/browser";
 
-const scrapeWebsite = async (): Promise<string[]> => {
+const scrapeNewYorkTimes = async (): Promise<string[]> => {
   const browser = await new Browser({ launchWindow: false }).autoDetect();
 
   let stories: string[] = [];
@@ -40,4 +40,4 @@ const scrapeWebsite = async (): Promise<string[]> => {
   return stories;
 };
 
-export { scrapeWebsite };
+export { scrapeNewYorkTimes };

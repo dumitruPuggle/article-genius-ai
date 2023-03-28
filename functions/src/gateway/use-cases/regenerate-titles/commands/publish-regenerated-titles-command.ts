@@ -1,8 +1,15 @@
+import { getFirestore, Timestamp } from "firebase-admin/firestore";
 import { Configuration, OpenAIApi } from "openai";
 import { scrapeGamespotWorker } from "../workers/scrape-gamespot-worker";
+import {
+  scheduledArticlesDoc,
+  ScheduledTitlesRepo,
+} from "../../../../core/firebase/firebase-repos";
 
 export class PublishRegeneratedTitlesCommand {
   async execute(): Promise<string[]> {
+    const db = getFirestore();
+
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
     });
@@ -22,7 +29,13 @@ export class PublishRegeneratedTitlesCommand {
 
     try {
       const newTitles = await Promise.all(regenerateTitles);
-      return newTitles;
+      // Publish articles in separate collections
+      await ScheduledTitlesRepo(db)
+        .doc(scheduledArticlesDoc)
+        .set({
+          data: newTitles,
+          updatedAt: Timestamp.fromDate(new Date()),
+        });
     } catch (e) {}
     return [""];
   }
