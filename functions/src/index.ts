@@ -8,14 +8,10 @@ import {
   CloudFirestoreCommandInvoker,
   CloudFirestoreCommandQueue,
 } from "./gateway/invokers/cloud-firestore-command-invoker";
-// import {
-//   scheduledArticlesDoc,
-//   ScheduledTitlesRepoName,
-// } from "./core/firebase/firebase-repos";
-// import {
-//   CloudFirestoreCommandInvoker,
-//   CloudFirestoreCommandQueue,
-// } from "./gateway/invokers/cloud-firestore-command-invoker";
+import {
+  scheduledArticlesDoc,
+  ScheduledTitlesRepoName,
+} from "./core/firebase/firebase-repos";
 
 initializeApp();
 
@@ -29,14 +25,14 @@ exports.gamespot_scheduled_scraping = functions
     );
   });
 
-// exports.articleWriter = functions.firestore
-//   .document(`${ScheduledTitlesRepoName}/${scheduledArticlesDoc}`)
-//   .onUpdate(async (change, context) => {
-//     console.log("UPDATED");
-//     // await CloudFirestoreCommandInvoker.executeCommand(
-//     //   CloudFirestoreCommandQueue.PUBLISH_NEWLY_GENERATED_ARTICLE
-//     // );
-//   });
+exports.articleWriter = functions.firestore
+  .document(`${ScheduledTitlesRepoName}/${scheduledArticlesDoc}`)
+  .onUpdate(async (change, context) => {
+    await CloudFirestoreCommandInvoker.executeCommand(
+      CloudFirestoreCommandQueue.PUBLISH_NEWLY_GENERATED_ARTICLE,
+      { change, context }
+    );
+  });
 
 exports.scrape = functions
   .runWith({ timeoutSeconds: 500, memory: "2GB" })
@@ -45,8 +41,6 @@ exports.scrape = functions
     await CloudQueuesCommandInvoker.executeCommand(
       CloudCommandQueue.PUBLISH_REGENERATED_TITLES
     );
-    await CloudFirestoreCommandInvoker.executeCommand(
-      CloudFirestoreCommandQueue.PUBLISH_NEWLY_GENERATED_ARTICLE
-    );
+
     response.send(200);
   });

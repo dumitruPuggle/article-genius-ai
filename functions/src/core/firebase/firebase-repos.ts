@@ -7,5 +7,10 @@ export const scheduledArticlesDoc = "scheduledTitles";
 
 export const scheduledArticlesDocTitles = async (
   db: FirebaseFirestore.Firestore
-) =>
-  await (await ScheduledTitlesRepo(db).doc(scheduledArticlesDoc).get()).data();
+) => ScheduledTitlesRepo(db).doc(scheduledArticlesDoc);
+
+export const productionArticlesRepoName = "ProductionArticles";
+export const articles = "public";
+
+export const productionArticles = async (db: FirebaseFirestore.Firestore) =>
+  db.collection(productionArticlesRepoName).doc(articles);
