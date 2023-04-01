@@ -37,3 +37,8 @@ next-env.d.ts
 
 # chromium
 /functions/src/chromium/chrome-mac
+
+
+functions/firebase-debug.log
+functions/firebase-debug.log
+functions/firestore-debug.log

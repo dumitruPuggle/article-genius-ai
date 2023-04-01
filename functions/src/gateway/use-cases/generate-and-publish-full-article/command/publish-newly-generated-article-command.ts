@@ -14,7 +14,7 @@ export class PublishNewlyGeneratedArticle {
     });
     const articles = await Promise.all(generateArticlesQueue);
     const db = getFirestore();
-    (await productionArticles(db)).create({
+    (await productionArticles(db)).set({
       articles,
     });
   }

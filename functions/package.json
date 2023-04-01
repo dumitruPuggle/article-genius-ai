@@ -9,7 +9,7 @@
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "test": "jest",
-    "stop": "lsof -i TCP:8080 | grep LISTEN | awk '{print $2}' | xargs kill -9 && lsof -i TCP:8085 | grep LISTEN | awk '{print $2}' | xargs kill -9 && lsof -i TCP:8085 | grep LISTEN | awk '{print $2}' | xargs kill -9 && lsof -i TCP:5000 | grep LISTEN | awk '{print $2}' | xargs kill -9"
+    "stop": "lsof -t -i :9099 -i:8080 -i:9000 -i:9199 -i:4000 -i:5001 -i:5000 | xargs kill -9"
   },
   "engines": {
     "node": "16"
