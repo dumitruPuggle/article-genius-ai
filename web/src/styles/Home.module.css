@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  background-color: hsla(0, 0%, 97.26%, 1);
 }
 
 .center {
@@ -17,7 +18,4 @@
   .main {
     background-color: black;
   }
-}
-
-.button-group {
 }
