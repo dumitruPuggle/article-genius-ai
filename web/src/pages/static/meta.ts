@@ -1,0 +1,2 @@
+export const description =
+  "Article Genius is a platform dedicated to providing top-quality content on the latest happenings and trends in the gaming world. With a team of expert writers and contributors, Article Genius offers a diverse range of articles, reviews, and news pieces, catering to the interests of gamers of all levels. Stay up-to-date with the latest gaming news and insights, and indulge in well-written, informative content with Article Genius.";
