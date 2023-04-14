@@ -4,7 +4,7 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --darkColor: black;
+  --darkColor: rgb(33, 33, 33);
   --darkSecondary: rgb(255, 255, 255, 0.14);
 }
 
@@ -25,6 +25,10 @@ small {
   color: rgb(0, 0, 0, 0.71);
 }
 
+p {
+  color: #414141;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -33,6 +37,9 @@ small {
     color: white;
   }
   small {
+    color: rgb(209, 209, 209);
+  }
+  p {
     color: white;
   }
 }
