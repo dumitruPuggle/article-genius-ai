@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
-import { Logo } from "./components/Logo";
 import { description } from "../pages/static/meta";
+import { Logo } from "./components/Logo";
 
 export default function Home() {
   return (
@@ -13,10 +13,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main className={`${styles.main} pt-4`}>
         <div className={styles.center}>
           <Logo />
         </div>
+        <hr />
         <div className={`${styles.pageBody} container-sm`}>
           <p>
             Article Genius AI, the revolutionary new tool for creating
@@ -47,13 +48,6 @@ export default function Home() {
             algorithms to ensure that the articles it produces are not only
             accurate and informative, but also engaging and well-written.
           </small>
-          <div
-          style={{width: '100px', margin: 20}}
-            className={styles.NSCocoaButton}
-          >
-            <div className={styles.NSCocoaLabel}>Hello </div>
-            <div className={styles.NSCocoaBlur}></div>
-          </div>
         </div>
       </main>
     </>
